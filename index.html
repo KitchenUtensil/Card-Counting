@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Card Counter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Top Info Bar -->
+        <div class="top-bar">
+            <div class="bankroll-display">
+                <span class="label">Bankroll:</span>
+                <span class="amount" id="bankroll">$0</span>
+            </div>
+            <div class="deck-info">
+                <span class="decks-left" id="decks-left">0.00 decks left</span>
+            </div>
+            <div class="count-toggle">
+                <button id="count-toggle" class="toggle-btn">Show Count</button>
+                <span class="running-count" id="running-count" style="display: none;">0</span>
+            </div>
+            <div class="shuffle-alert" id="shuffle-alert" style="display: none;">
+                🔁 Shuffled!
+            </div>
+        </div>
+
+        <!-- Betting Area -->
+        <div class="betting-area">
+            <div class="betting-circle" id="betting-circle">
+                <div class="bet-amount" id="current-bet">$0</div>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div class="game-area">
+            <!-- Dealer Section -->
+            <div class="dealer-section">
+                <h3>Dealer</h3>
+                <div class="dealer-cards" id="dealer-cards"></div>
+                <div class="dealer-total" id="dealer-total"></div>
+            </div>
+
+            <!-- Player Section -->
+            <div class="player-section">
+                <h3>Player</h3>
+                <div class="player-hands" id="player-hands">
+                    <div class="player-hand active" id="hand-0">
+                        <div class="player-cards" id="player-cards-0"></div>
+                        <div class="player-total" id="player-total-0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons" id="action-buttons" style="display: none;">
+            <button id="hit-btn" class="action-btn">Hit</button>
+            <button id="stand-btn" class="action-btn">Stand</button>
+            <button id="double-btn" class="action-btn">Double</button>
+            <button id="split-btn" class="action-btn">Split</button>
+        </div>
+
+        <!-- Chip Selection -->
+        <div class="chip-selection">
+            <div class="chip" data-value="1" id="chip-1">$1</div>
+            <div class="chip" data-value="5" id="chip-5">$5</div>
+            <div class="chip" data-value="25" id="chip-25">$25</div>
+            <div class="chip" data-value="100" id="chip-100">$100</div>
+        </div>
+
+        <!-- Game Controls -->
+        <div class="game-controls">
+            <button id="deal-btn" class="control-btn">Deal</button>
+            <button id="clear-bet-btn" class="control-btn">Clear Bet</button>
+            <button id="new-game-btn" class="control-btn">New Game</button>
+        </div>
+
+        <!-- Setup Modal -->
+        <div class="modal" id="setup-modal">
+            <div class="modal-content">
+                <h2>Welcome to Blackjack Card Counter</h2>
+                <div class="setup-form">
+                    <div class="form-group">
+                        <label for="initial-bankroll">Initial Bankroll ($):</label>
+                        <input type="number" id="initial-bankroll" min="100" value="1000" step="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="shoe-size">Number of Decks:</label>
+                        <select id="shoe-size">
+                            <option value="2">2 Decks</option>
+                            <option value="6" selected>6 Decks</option>
+                        </select>
+                    </div>
+                    <button id="start-game-btn" class="control-btn">Start Game</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
