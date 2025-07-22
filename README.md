@@ -131,7 +131,3 @@ card/
 ## 🎉 Enjoy the Game!
 
 This Blackjack Card Counter provides a realistic casino experience with the added challenge of card counting. Practice your skills, develop your strategy, and see if you can beat the house!
-
----
-
-*Note: This is a simulation game for entertainment and educational purposes. Card counting is not illegal, but casinos may ask players to leave if they detect counting behavior.* 
